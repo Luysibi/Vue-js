@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curso-vuejs</title>
+    <script src="./vue.js"></script>  
+    <style>
+
+    </style>
+</head>
+<body> 
+      <h1>"V-on" Manipulação de eventos</h1>
+      <h2>"V-on" Enviando parâmetros para os métodos</h2>
+      <div id="app">
+            <input type='text'v-on @keyup="imprimirTexto('Enviando parâmetro')" :placeholder="VALORPIX">   
+            <button v-on:click="mensagemAlert($event)" >Botão</button>
+      </div>
+
+      <script> 
+            const vm = new Vue({
+                  el:'#app',
+                  data:{
+                        VALORPIX:'Digite um valor',
+                        xyz:true
+                  },
+                  methods:{
+                        imprimirTexto(t,x){
+                              console.log(t);
+                              console.log(this.xyz)
+                        },
+                        mensagemAlert(evento){
+                              console.log(evento)
+                        }    
+                  }
+            },      
+      );
+      </script>
+</body>
+</html>

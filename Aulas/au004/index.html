@@ -5,27 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>curso-vuejs</title>
     <script src="./vue.js"></script>  
+    <style>
+      .cor{
+            background-color: blue;
+      }
+    </style>
 </head>
 <body> 
       <div id="app">
-          
+            {{mensagem}}
+          <input :value='mensagem' :class="teste ? 'verde' : cor">   
       </div>
 
-      <script>
+      <script> 
             const vm = new Vue({
                   el:'#app',
                   data:{
-                        n1:13,
-                        n2:7
+                       mensagem:'Expressões', 
+                       cor:'azul',
+                       teste:true
                   },
                   methods:{
-                        soma(){
-                              return this.n1 + this.n2
-                        }
-                        }
-                  },      
-            );
+                        
+                  }
+            },      
+      );
       </script>
-    
 </body>
 </html>
