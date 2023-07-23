@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curso-vuejs</title>
+    <script src="./vue.js"></script>  
+    <style>
+
+    </style>
+</head>
+<body> 
+      <div id="app">
+            <input type="text" id="inputText">
+            <br>
+            <select id="opcoes">
+                  <option value="a">opção 1</option>
+                  <option value="b">opção 2</option>
+                  <option value="c">opção 3</option>
+            </select>
+            <p id="paragrafo" style="color: red;">paragrafo</p>
+            <button @click="CliqueAqui()">here!</button>
+      </div>
+
+      <script> 
+            const vm = new Vue({
+                  el: "#app",
+                  data:{
+
+                  },
+                  methods:{
+                        CliqueAqui(){
+                              // console.log(inputText.value)
+                              // console.log(opcoes.value)
+                              console.log(paragrafo.style)
+
+                        }                 
+                  }
+            })
+      </script>
+</body>
+</html>

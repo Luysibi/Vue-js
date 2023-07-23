@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curso-vuejs</title>
+    <script src="./vue.js"></script>  
+    <style>
+      body{
+            background-color: rgb(96, 107, 141);
+      }
+    </style>
+</head>
+<body> 
+      <h1>v-show</h1>
+      <div id="app">
+            <p @mouseover="exibirTexto = true" @mouseout="exibirTexto= false">Exemplo tooltip</p>
+          <div v-show="exibirTexto">
+            <h3> Exebir texto ajuda</h3>
+            <p> Exibir texto ajuda</p>
+          </div>
+      </div>
+
+      <script> 
+            const vm = new Vue({
+                  el: "#app",
+                  data:{
+                       exibirTexto: false
+                  },
+                  methods:{
+                      
+                  }
+            })
+      </script>
+</body>
+</html>

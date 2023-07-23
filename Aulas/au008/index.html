@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>curso-vuejs</title>
+    <script src="./vue.js"></script>  
+    <style>
+      body{
+            background-color: rgb(96, 107, 141);
+      }
+    </style>
+</head>
+<body> 
+      <h1>v-IF -> redenrização condicional de elementos html</h1>
+      <hr>
+      <!-- v-if -->
+      <div id="app">
+            <button @click="mostrarSaldo  = !mostrarSaldo">
+            <span v-if="!mostrarSaldo">Exebir saldo</span>
+            <span v-if="mostrarSaldo">Ocultar saldo</span>
+            </button>
+            <p> Saldo: <span  v-if="mostrarSaldo"> {{ saldo }}</span></p>
+            <hr>
+
+            <!--v-if / v-else -->
+            DIGITE ALGO: <input type="text" id="inputIdade" @blur="setIdade()" > {{idade}}
+            <p v-if="idade < 18 ">Menor de idade</p>
+            <p v-else> maior de idade</p>
+            <hr>
+
+            <!-- v-if / v-else  /v-else-if -->
+            
+      </div>
+
+      <script> 
+            const vm = new Vue({
+                  el: "#app",
+                  data:{
+                        saldo:2000,
+                        mostrarSaldo: true,
+                        idade:0,
+
+                  },
+                  methods:{
+                        setIdade(){
+                              this.idade = inputIdade.value
+                        }
+                  }
+            })
+      </script>
+</body>
+</html>

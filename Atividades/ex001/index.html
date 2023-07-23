@@ -18,17 +18,18 @@
             height: 50px;
             display: inline-block;
       }
-      .branco{
-            background-color: white;
+      .preto{
+            background-color: black;
+            color: white;
       }
       .verde{
             background-color: green;
       }
       .azul{
-            background-color: blue;
+            background-color: yellow;
       }
       .vermelho{
-            background-color: red;
+            background-color: white;
       }
     </style>
 </head>
@@ -36,10 +37,13 @@
       <div id="app">
             <div  class="borda div-principal" :class="cor">
                  Cor: {{cor}}
-                 Po
+                 <br>
+                 posição X: {{posicaoX}}
+                 <br>
+                 posição Y: {{posicaoY}}
             </div>
             <hr>
-            <div @mouseover="mudarCor('verde')" class="borda div-comum"></div>
+            <div @mouseover="mudarCor('preto')" class="borda div-comum"></div>
             <div class="borda div-comum" @mouseover="mudarCor('vermelho')" @mouseout="mudarCor('azul')"></div>
             <div class="borda div-comum" @mousemove="(coordernandas($event))"></div>
       </div>
@@ -49,7 +53,8 @@
                   el:'#app',
                   data:{
                         cor:'branco',
-
+                        posicaoX:0,
+                        posicaoY:0
 
                   },
                   methods:{
@@ -58,8 +63,8 @@
                         
                        },
                        coordernandas(e){
-                        console.log(e.clientX)
-                        console.log(e.clientY)
+                        this.posicaoX = e.clientX,
+                        this.posicaoY = e.clientY
                        }  
                   }
             },      
